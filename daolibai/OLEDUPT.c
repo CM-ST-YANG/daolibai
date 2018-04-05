@@ -2,7 +2,8 @@
 #include "stm32f4xx_hal.h"
 #include <delay.h>
 #include <IIC.h>
-
+#include "pwm.h"
+extern uint32_t val1, val2;
 
 extern int32_t SPEED[2];
 char a[] = "i love you";
@@ -58,4 +59,6 @@ void  TIM3_Handler(void)
 {	
 	SPEED[0] = TIM4->CNT - 1024;
 	TIM4->CNT = 1024;
+	TIM9->CCR1 = val1;
+	TIM9->CCR2 = val2;
 }

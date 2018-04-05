@@ -3,6 +3,8 @@
 #include <IIC.h>
 #include "OLEDUPT.h"
 #include <mybmq.h>
+#include <pwm.h>
+uint32_t val1=0, val2=0;
 //#include <OLEDUPT.h>
 #ifdef __cplusplus
 extern "C"
@@ -29,6 +31,7 @@ int main(void)
 //	OLED_CLS();
 	tim3_init();
 	tim4_init();
+	PWM_init();
 	while (1)
 	{
 //		OLED_ShowStr(5, 7, a, 1);
